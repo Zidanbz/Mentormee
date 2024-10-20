@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BerandaPage extends StatefulWidget {
-  const BerandaPage({Key? key}) : super(key: key);
+  const BerandaPage({super.key});
 
   @override
   State<BerandaPage> createState() => _BerandaPageState();
@@ -34,20 +34,20 @@ class _BerandaPageState extends State<BerandaPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [],
                 ),
-                Text(
+                const Text(
                   'BERANDA',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search...',
@@ -57,8 +57,8 @@ class _BerandaPageState extends State<BerandaPage> {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 14),
-                      prefixIcon: Icon(Icons.search), // Icon pencarian
+                      contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                      prefixIcon: const Icon(Icons.search), // Icon pencarian
                     ),
                   ),
                 ),
@@ -80,17 +80,17 @@ class _BerandaPageState extends State<BerandaPage> {
                             onTap: () => _onCardTap('Card 1'),
                             borderRadius: BorderRadius.circular(16),
                             child: Container(
-                              margin: EdgeInsets.only(right: 16),
+                              margin: const EdgeInsets.only(right: 16),
                               width: 300,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage('assets/CardUp.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,17 +120,17 @@ class _BerandaPageState extends State<BerandaPage> {
                             onTap: () => _onCardTap('Card 2'),
                             borderRadius: BorderRadius.circular(16),
                             child: Container(
-                              margin: EdgeInsets.only(right: 16),
+                              margin: const EdgeInsets.only(right: 16),
                               width: 300,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage('assets/CardUp.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,13 +163,13 @@ class _BerandaPageState extends State<BerandaPage> {
                               width: 300,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage('assets/CardUp.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,20 +199,20 @@ class _BerandaPageState extends State<BerandaPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Kategori',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -225,9 +225,9 @@ class _BerandaPageState extends State<BerandaPage> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  side: BorderSide(color: Colors.grey),
+                                  side: const BorderSide(color: Colors.grey),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'Desain',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -235,7 +235,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 8),
+                              const SizedBox(width: 8),
                               ElevatedButton(
                                 onPressed: () => _onButtonTap('Bisnis'),
                                 style: ElevatedButton.styleFrom(
@@ -244,9 +244,9 @@ class _BerandaPageState extends State<BerandaPage> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  side: BorderSide(color: Colors.grey),
+                                  side: const BorderSide(color: Colors.grey),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'Bisnis',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -254,7 +254,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 8),
+                              const SizedBox(width: 8),
                               ElevatedButton(
                                 onPressed: () =>
                                     _onButtonTap('IT & Perangkat Lunak'),
@@ -264,9 +264,9 @@ class _BerandaPageState extends State<BerandaPage> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  side: BorderSide(color: Colors.grey),
+                                  side: const BorderSide(color: Colors.grey),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'IT & Perangkat Lunak',
                                   style: TextStyle(
                                     fontSize: 16,
@@ -279,9 +279,9 @@ class _BerandaPageState extends State<BerandaPage> {
                         ),
                         GridView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 16,
                             mainAxisSpacing: 16,
@@ -335,16 +335,16 @@ class _BerandaPageState extends State<BerandaPage> {
                                     children: [
                                       Text(
                                         title,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
                                         ),
                                       ),
-                                      SizedBox(height: 8),
+                                      const SizedBox(height: 8),
                                       Text(
                                         description,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 14,
                                           color: Colors.white,
                                         ),
@@ -372,7 +372,7 @@ class _BerandaPageState extends State<BerandaPage> {
 class NewPage extends StatelessWidget {
   final String title;
 
-  const NewPage({Key? key, required this.title}) : super(key: key);
+  const NewPage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

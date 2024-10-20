@@ -1,64 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:mentorme/Login/LoginPage.dart';
+import 'package:mentorme/Daftar/daftar_page.dart';
+import 'package:mentorme/main.dart';
 
-// ... (kode SplashScreen, OnboardingScreen, LoginPage) ...
-
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE0FFF3),
       body: SingleChildScrollView(
+        // Agar keyboard tidak menutupi input
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
               Image.asset(
                 'assets/Logo.png', // Ganti dengan path logo
-                width: 150,
-                height: 150,
+                width: 200,
+                height: 200,
               ),
-              const SizedBox(height: 20),
               const Text(
-                'MentorME',
+                'MentorMe',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF339989),
+                  color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const Text(
-                'Daftar',
+                'LOGIN',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const Text(
-                'Masukkan data diri Anda',
+                'Masukkan email dan password Anda',
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 30),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Nama Lengkap',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                ),
-              ),
-              const SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   hintText: 'E-mail',
@@ -74,7 +58,7 @@ class RegisterPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               TextField(
-                obscureText: true,
+                obscureText: true, // Menyembunyikan password
                 decoration: InputDecoration(
                   hintText: 'Kata Sandi',
                   filled: true,
@@ -87,90 +71,80 @@ class RegisterPage extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
                 ),
               ),
-              const SizedBox(height: 20),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Konfirmasi Kata Sandi',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                ),
-              ),
               const SizedBox(height: 30),
+              const Text(
+                'Or social login',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      // Aksi login dengan Apple
+                    },
+                    icon: const Icon(Icons.apple),
+                    iconSize: 40,
+                  ),
+                  const SizedBox(width: 15),
+                  IconButton(
+                    onPressed: () {
+                      // Aksi login dengan Google
+                    },
+                    icon: Image.asset(
+                      'assets/google.png',
+                      width: 27, // Lebar gambar
+                      height: 27,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 25),
               ElevatedButton(
                 onPressed: () {
-                  // Aksi daftar
+                  // Aksi login
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyApp(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF339989),
+                  backgroundColor: const Color(0xfffffffff),
                   minimumSize: const Size.fromHeight(50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
                   ),
                 ),
                 child: const Text(
-                  'Daftar',
+                  'Masuk',
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white,
+                    color: Color(0xFF339989),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              const Text(
-                'Or social register',
-                style: TextStyle(fontSize: 16),
-              ),
-              const SizedBox(height: 20),
-              Row(
-                // Social register buttons
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      // Aksi register dengan Apple
-                    },
-                    icon: const Icon(Icons.apple),
-                    iconSize: 40,
-                  ),
-                  const SizedBox(width: 20),
-                  IconButton(
-                    onPressed: () {
-                      // Aksi register dengan Google
-                    },
-                    icon: Image.asset(
-                      'assets/google.png',
-                      width: 27,
-                      height: 27,
-                    ), // Ganti dengan path gambar Google Anda
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Sudah punya akun?',
+                    'Belum punya akun?',
                     style: TextStyle(fontSize: 16),
                   ),
                   TextButton(
                     onPressed: () {
-                      // Aksi navigasi ke halaman login
+                      // Aksi navigasi ke halaman daftar
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const LoginPage()),
+                            builder: (context) => const RegisterPage()),
                       );
                     },
                     child: const Text(
-                      'Masuk disini',
+                      'Daftar disini',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color(0xFF339989),
@@ -178,6 +152,14 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: 10),
+              IconButton(
+                onPressed: () {
+                  // Aksi untuk tombol fingerprint
+                },
+                icon: const Icon(Icons.fingerprint),
+                iconSize: 40,
               ),
             ],
           ),

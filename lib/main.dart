@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mentorme/Beranda/Beranda1.dart'; // Sesuaikan path jika perlu
-import 'SplashScreen/SplashScreen.dart';
+import 'package:mentorme/Beranda/beranda.dart'; // Sesuaikan path jika perlu
+import 'package:mentorme/Kegiatanku/kegiatanku.dart';
+import 'package:mentorme/Projectku/project_marketplace.dart';
+import 'SplashScreen/splash_screen.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -20,7 +22,9 @@ class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    BerandaPage(),
+    const BerandaPage(),
+    const ProjectPage(),
+    const Pelajaranku(),
     // Tambahkan halaman lain di sini jika ada
   ];
 
@@ -37,16 +41,16 @@ class _MyAppState extends State<MyApp> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
+              const Row(
                 children: [
                   CircleAvatar(
                     radius: 24,
                     backgroundImage: AssetImage('assets/User.jpg'),
                   ),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         'Hi! Zidan',
                         style: TextStyle(
@@ -62,7 +66,7 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.notifications),
-                    color: Color(0xff339989),
+                    color: const Color(0xff339989),
                     onPressed: () {
                       // Handle notifications icon tap
                     },
@@ -96,7 +100,7 @@ class _MyAppState extends State<MyApp> {
                           onTap: () {
                             // Handle the add button tap
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.add_box,
                             color: Color(0xff339989),
                             size: 24,

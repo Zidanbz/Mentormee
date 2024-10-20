@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:mentorme/Daftar/DaftarPage.dart';
-import 'package:mentorme/Login/LoginPage.dart';
+import 'package:mentorme/Daftar/daftar_page.dart';
+import 'package:mentorme/Login/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SplashScreenState createState() => _SplashScreenState();
 }
 
@@ -55,9 +56,10 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
@@ -73,15 +75,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.initState();
     _pages = [
       _buildOnboardingPage(
-        'Assets/onboarding1.png', // Ganti dengan path gambar onboarding 1
+        'assets/onboarding1.png', // Ganti dengan path gambar onboarding 1
         'Menggali potensi diri dalam dengan bimbingan mentor',
       ),
       _buildOnboardingPage(
-        'Assets/unboarding2.png', // Ganti dengan path gambar onboarding 2
+        'assets/unboarding2.png', // Ganti dengan path gambar onboarding 2
         'Temukan ide brilian untuk diskusikan proyek bersama teman-teman dengan minat yang sama!',
       ),
       _buildOnboardingPage(
-        'Assets/unboarding3.png', // Ganti dengan path gambar onboarding 3
+        'assets/unboarding3.png', // Ganti dengan path gambar onboarding 3
         'Bergabunglah bersama MentorMe Sekarang!',
       ),
     ];
@@ -147,7 +149,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const RegisterPage()),
-                      ); 
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF339989),
