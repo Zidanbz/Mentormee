@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentorme/Beranda/Beranda1.dart'; // Sesuaikan path jika perlu
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +15,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
 
-  // final List<Widget> _pages = [
-  //   //LoginPage(),
-  //   // BerandaPage(),
-  //   // Project(),
-  //   // Pelajaranku(),
-  //   // messages(),
-  //   // Profile(),
-  // ];
+  final List<Widget> _pages = [
+    BerandaPage(),
+    // Tambahkan halaman lain di sini jika ada
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: const Color(0xffE0FFF3),
         appBar: AppBar(
           backgroundColor: const Color(0xffE0FFF3),
-          elevation: 0,
+          scrolledUnderElevation: 0,
           toolbarHeight: 100,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min, // Fit to content
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Image.asset(
                           'assets/Coin.png',
@@ -109,6 +106,7 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
+        body: _pages[_currentIndex],
         bottomNavigationBar: Container(
           padding: const EdgeInsets.all(12),
           margin: const EdgeInsets.symmetric(horizontal: 24),
