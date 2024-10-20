@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mentorme/Beranda/Beranda1.dart'; // Sesuaikan path jika perlu
+import 'SplashScreen/SplashScreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: SplashScreen(),
+    debugShowCheckedModeBanner: false, // Set SplashScreen sebagai halaman awal
+  ));
 }
 
 class MyApp extends StatefulWidget {
