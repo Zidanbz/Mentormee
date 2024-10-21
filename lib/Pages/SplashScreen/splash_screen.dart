@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:mentorme/Daftar/daftar_page.dart';
-import 'package:mentorme/Login/login_page.dart';
+import 'package:mentorme/Pages/Daftar/daftar_page.dart';
+import 'package:mentorme/Pages/Login/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
