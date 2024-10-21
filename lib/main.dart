@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mentorme/Beranda/beranda.dart'; // Sesuaikan path jika perlu
-import 'package:mentorme/Kegiatanku/kegiatanku.dart';
-import 'package:mentorme/Projectku/project_marketplace.dart';
-import 'SplashScreen/splash_screen.dart';
+import 'package:mentorme/Pages/Beranda/beranda.dart'; // Sesuaikan path jika perlu
+import 'package:mentorme/Pages/Kegiatanku/kegiatanku.dart';
+import 'package:mentorme/Pages/Konsultasi/konsultasi.dart';
+import 'package:mentorme/Pages/Projectku/project_marketplace.dart';
+import 'Pages/SplashScreen/splash_screen.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -25,6 +26,7 @@ class _MyAppState extends State<MyApp> {
     const BerandaPage(),
     const ProjectPage(),
     const Pelajaranku(),
+    HomeScreen(),
     // Tambahkan halaman lain di sini jika ada
   ];
 
